@@ -50,7 +50,8 @@ platform :ios do
       xcodeproj: "#{GITHUB_WORKSPACE}/Loop/Loop.xcodeproj",
       build_number: current_build_number
     )      
-    
+    puts "#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"
+
     match(
       type: "appstore",
       git_basic_authorization: Base64.strict_encode64("#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"),
