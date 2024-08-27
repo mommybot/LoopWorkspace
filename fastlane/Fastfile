@@ -54,6 +54,7 @@ platform :ios do
 
     match(
       type: "appstore",
+      readonly: false,
       git_basic_authorization: Base64.strict_encode64("#{GITHUB_REPOSITORY_OWNER}:#{GH_PAT}"),
       app_identifier: [
         "com.#{TEAMID}.loopkit.Loop", 
@@ -63,6 +64,7 @@ platform :ios do
         "com.#{TEAMID}.loopkit.Loop.Loop-Intent-Extension",
         "com.#{TEAMID}.loopkit.Loop.LoopWidgetExtension"
       ],
+      
     )
 
     previous_build_number = latest_testflight_build_number(
